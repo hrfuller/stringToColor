@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String to Color</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script type="text/javascript" src="../string_to_color.js"></script>
+</head>
+<body>
+    <h1>String to Color</h1>
+    <p>Generate a consistent (and good looking) color for any string</p>
+    
+    <input type="text" placeholder="Type anything here"/>
+    
+    <div class="output"></div>
+    
+    <a href="http://icorbin.com" class="icorbin">By Brandon Corbin</a>
+    <a href="https://github.com/brandoncorbin/string_to_color" class="icorbin">Fork on Github</a>
+    
+    <script type="text/javascript">
+        $(function () {
+            var $output = $('.output');
+            $('input[type=text]').keyup(function () {
+                $output.css({
+                    'background-color': '#' + string_to_color($(this).val())
+                }).html($(this).val());
+            }).focusout(function () {
+                if ($(this).val() === '') {
+                    $output.css({'background-color': ''});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
