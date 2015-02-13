@@ -1,15 +1,16 @@
 /********************************************************
-Name: str_to_color
-Description: create a hash from a string then generates a color
-Usage: alert('#'+str_to_color("Any string can be converted"));
-author: Brandon Corbin [code@icorbin.com]
-website: http://icorbin.com
-********************************************************/
+ Name: string_to_color
+ Description: create a hash from a string then generates a color
+ Usage: alert('#'+string_to_color("Any string can be converted"));
+ Author: Brandon Corbin [code@icorbin.com]
+ Website: http://icorbin.com
+ ********************************************************/
 
 function string_to_color(str) {
     'use strict';
+
     // Generate a Hash for the String
-    var hash = function(word) {
+    var hash = function (word) {
         var h = 0;
         for (var i = 0; i < word.length; i++) {
             h = word.charCodeAt(i) + ((h << 5) - h);
@@ -18,7 +19,7 @@ function string_to_color(str) {
     };
 
     // Change the darkness or lightness
-    var shade = function(color, prc) {
+    var shade = function (color, prc) {
         var num = parseInt(color, 16),
             amt = Math.round(2.55 * prc),
             R = (num >> 16) + amt,
@@ -29,17 +30,15 @@ function string_to_color(str) {
             (B < 255 ? B < 1 ? 0 : B : 255))
             .toString(16)
             .slice(1);
-
     };
+
     // Convert init to an RGBA
-    var int_to_rgba = function(i) {
-        var color = ((i >> 24) & 0xFF).toString(16) +
+    var int_to_rgba = function (i) {
+        return ((i >> 24) & 0xFF).toString(16) +
             ((i >> 16) & 0xFF).toString(16) +
             ((i >> 8) & 0xFF).toString(16) +
             (i & 0xFF).toString(16);
-        return color;
     };
 
     return shade(int_to_rgba(hash(str)), -10);
-
 }
