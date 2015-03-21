@@ -8,11 +8,12 @@
     "main": "src/string-to-color.js",
     "keywords": [
         "stringToColor",
+        "string-to-color",
         "color"
     ],
     "license": "Apache License 2.0",
     "repository": {
         "type": "git",
-        "url": "git://github.com/derTobsch/stringtocolor.git"
+        "url": "git://github.com/derTobsch/stringToColor.git"
     }
 }
