@@ -56,17 +56,18 @@
                     var value = $(this).val();
                     if (value.length > 0) {
                         var color = '#' + getColor(value);
-                        setColor($(this), color);
+                        setColor($(this), color, '#ffffff');
                         $output.html(color);
                     } else {
-                        setColor($(this), '');
+                        setColor($(this), '', 'black');
                         $output.html('');
                     }
                 });
-                function setColor($input, color) {
+                function setColor($input, generatedColor, fontColor) {
                     $input.css({
-                        'background-color': color,
-                        'border-color': color
+                        'color' : fontColor,
+                        'background-color': generatedColor,
+                        'border-color': generatedColor
                     });
                 }
             });
