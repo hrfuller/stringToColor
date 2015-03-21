@@ -28,14 +28,14 @@ Add it to your bower.json
     ...
 
 
-###EcmaScript 6 (ES6)
+####EcmaScript 6 (ES6)
 
 StringToColor Is realized as an EcmaScript 6 Module.
 You can find the ES6 Module in
 
     dist/string-to-color.js
 
-###Universal Module Definition (UMD)
+####Universal Module Definition (UMD)
 
 The pattern is admittedly ugly, but is both AMD and CommonJS compatible,
 as well as supporting the old-style “global” variable definition.
