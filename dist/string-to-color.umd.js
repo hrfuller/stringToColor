@@ -5,21 +5,24 @@
         factory(exports);
     }
 })(function (exports) {
-    "use strict";
-
     /********************************************************
      Name: String to Color
      Description: creates a unambiguously color from a string
      Author: Tobias Schneider [code@Tobsch.org - http://www.tobsch.org]
      ********************************************************/
 
-    exports.getColor = getColor;
-
     /**
      * Converts a string into a unique color
      * @param str
      * @returns {string}
      */
+    "use strict";
+
+    exports.getColor = getColor;
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
     function getColor(str) {
         return doShading(intToRgb(hash(str)), -10);
     }
@@ -67,7 +70,4 @@
 
         return (16777216 + (R < 255 ? R < 1 ? 0 : R : 255) * 65536 + (G < 255 ? G < 1 ? 0 : G : 255) * 256 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
     }
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
 });

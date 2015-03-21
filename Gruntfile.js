@@ -11,7 +11,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    "dist/string-to-color.umd.js": "src/string-to-color.js"
+                    'dist/string-to-color.umd.js': 'src/string-to-color.js'
                 }
             }
         },
@@ -21,8 +21,21 @@ module.exports = function (grunt) {
                     {expand: true, flatten: true, src: ['src/*'], dest: 'dist/', filter: 'isFile'}
                 ]
             }
+        },
+        eslint: {
+            options: {
+                configFile: 'eslint.json'
+            },
+            target: [
+                'src/*.js',
+                'Gruntfile.js'
+            ]
         }
     });
 
-    grunt.registerTask('default', ["babel", "copy"]);
+    grunt.registerTask('default', [
+        'eslint',
+        'babel',
+        'copy'
+    ]);
 };

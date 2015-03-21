@@ -4,14 +4,12 @@
  Author: Tobias Schneider [code@Tobsch.org - http://www.tobsch.org]
  ********************************************************/
 
-export { getColor };
-
 /**
  * Converts a string into a unique color
  * @param str
  * @returns {string}
  */
-function getColor(str) {
+export function getColor(str) {
     return doShading(intToRgb(hash(str)), -10);
 }
 
