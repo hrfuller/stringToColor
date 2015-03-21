@@ -21,9 +21,11 @@ to assign a tag it's own independent color  (without knowing what all tags are).
 
 Add it to your bower.json
 
+    ...
     "dependencies": {
-        "stringToColor": "https://github.com/derTobsch/stringToColor.git#1.0.1"
+        "string-to-color": "^1.0.1"
     }
+    ...
 
 
 ###EcmaScript 6 (ES6)
