@@ -36,11 +36,21 @@ module.exports = function (grunt) {
                 'src/*.js',
                 'Gruntfile.js'
             ]
+        },
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec',
+                    quiet: false
+                },
+                src: ['test/**/*.js']
+            }
         }
     });
 
     grunt.registerTask('default', [
         'eslint',
+        'mochaTest',
         'babel',
         'copy'
     ]);
