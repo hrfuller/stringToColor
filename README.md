@@ -1,7 +1,9 @@
+[![Build Status](https://travis-ci.org/derTobsch/stringToColor.svg?branch=master)](https://travis-ci.org/derTobsch/stringToColor)
 String to Color
 ===============
 
 Tiny library to generate the same nice hex color for a string in Javascript. 
+
 
 ###Features 
 
