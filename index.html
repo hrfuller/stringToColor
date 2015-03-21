@@ -6,8 +6,10 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
 
-    <script type="text/JavaScript" src="javascripts/string-to-color.umd.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script type="text/JavaScript" src="javascripts/string-to-color.js"></script>
 
     <title>StringToColor by derTobsch</title>
 </head>
@@ -18,13 +20,14 @@
     <div class="container">
         <h1>StringToColor</h1>
 
-        <h2>Consistently generate the same color for a specific string</h2>
-
+        <h2>Generate a consistent (and good looking) color for any string</h2>
         <section id="downloads">
             <a href="https://github.com/derTobsch/stringToColor/zipball/master" class="btn">Download as .zip</a>
             <a href="https://github.com/derTobsch/stringToColor/tarball/master" class="btn">Download as .tar.gz</a>
-            <a href="https://github.com/derTobsch/stringToColor" class="btn btn-github"><span class="icon"></span>View
-                on GitHub</a>
+            <a href="https://github.com/derTobsch/stringToColor" class="btn btn-github">
+                <span class="icon"></span>
+                View on GitHub
+            </a>
         </section>
     </div>
 </header>
@@ -35,22 +38,39 @@
             <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
                 <span class="octicon octicon-link"></span>
             </a>
-            Welcome to GitHub Pages.
         </h3>
 
         <p>
-            This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author
-            your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish.
-            After your page is generated, you can check out the new branch:
+            Type something into the input to see the fancy color which is connected to your input.
         </p>
 
-        <pre>
-            <code>
-                $ cd your_repo_root/repo_name
-                $ git fetch origin
-                $ git checkout gh-pages
-            </code>
-        </pre>
+        <div class="input-fields">
+            <input id="input" type="text" placeholder="Type anything here"/>
+        </div>
+        <div class="output"></div>
+
+        <script type="text/javascript">
+            $(function () {
+                var $output = $('.output');
+                $('input[type=text]').keyup(function () {
+                    var value = $(this).val();
+                    if (value.length > 0) {
+                        var color = '#' + getColor(value);
+                        setColor($(this), color);
+                        $output.html(color);
+                    } else {
+                        setColor($(this), '');
+                        $output.html('');
+                    }
+                });
+                function setColor($input, color) {
+                    $input.css({
+                        'background-color': color,
+                        'border-color': color
+                    });
+                }
+            });
+        </script>
     </section>
 </div>
 </body>

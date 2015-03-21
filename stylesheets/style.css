@@ -1,0 +1,23 @@
+.input-fields {
+    margin-top: 75px;
+    text-align: center;
+}
+
+.output {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: #FFF;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+}
+
+input[type=text] {
+    font-size: 120%;
+    border-radius: 4px;
+    padding: 20px 32px;
+    border: solid 1px #EEE;
+    width: 300px;
+    text-align: center;
+}
