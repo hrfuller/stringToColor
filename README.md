@@ -9,6 +9,11 @@ Tiny library to generate the same nice hex color for a string in Javascript.
 - Binary safe
 
 
+###Demo 
+
+http://dertobsch.github.io/stringToColor/
+
+
 ### Why it needed to exist 
 
 I needed a way to generate a consistent NICE color for any given word 
@@ -45,9 +50,22 @@ If your engines do not support EC6 you can use the UMD Module
     dist/string-to-color.umd.js
 
 
-###Demo 
+###Development 
 
-http://dertobsch.github.io/stringToColor/
+Get all dependencies via npm
+
+    npm install
+
+You can run all tasks via Grunt by typing
+
+    grunt
+
+it will
+
+* lint the files with eslint
+* run all tests via mocha
+* convert the ES6 Module via babel into an UMD Module
+* finally copy the ES6 and the UMD Modules into <code>/dist</code>
 
 
 ###License
