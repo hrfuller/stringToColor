@@ -36,11 +36,17 @@ module.exports = function (grunt) {
                 'src/*.js',
                 'Gruntfile.js'
             ]
+        },
+        shell: {
+            mochaTest: {
+                command: 'mocha --compilers js:mocha-traceur test/*.js'
+            }
         }
     });
 
     grunt.registerTask('default', [
         'eslint',
+        'shell:mochaTest',
         'babel',
         'copy'
     ]);
