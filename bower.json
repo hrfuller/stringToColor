@@ -1,9 +1,16 @@
 {
     "name": "StringToColor",
     "version": "1.0.1",
-    "main": "src/string-to-color.js",
     "description": "Tiny library to generate the same nice hex color for a string in Javascript.",
-    "author": "Tobias Schneider <Tobias.Schneider@sTobsch.org>",
+    "authors": [
+        "Tobias Schneider <Tobias.Schneider@Tobsch.org>"
+    ],
+    "main": "src/string-to-color.js",
+    "keywords": [
+        "stringToColor",
+        "color"
+    ],
+    "license": "Apache License 2.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/derTobsch/stringToColor.git"
