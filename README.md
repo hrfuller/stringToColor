@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/derTobsch/stringToColor.svg?branch=master)](https://travis-ci.org/derTobsch/stringToColor)
+[![Build Status](https://travis-ci.org/derTobsch/stringToColor.svg?branch=master)](https://travis-ci.org/derTobsch/stringToColor) [![devDependency Status](https://david-dm.org/dertobsch/stringToColor/dev-status.svg)](https://david-dm.org/dertobsch/stringToColor#info=devDependencies)
 String to Color
 ===============
 
