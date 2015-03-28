@@ -1,21 +1,37 @@
-.input-fields {
-    margin-top: 75px;
-    text-align: center;
+html {
+    overflow-y: scroll;
 }
 
-.output {
-    color: #ffffff;
-    width: 300px;
-    margin: 40px auto;
-    text-align: center;
+body {
+    font: 11px/1.1 'Raleway', sans-serif;
+    margin: 0;
 }
 
-input[type=text] {
-    color: black;
-    font-size: 120%;
-    border-radius: 4px;
-    padding: 20px 32px;
-    border: solid 1px #EEE;
-    width: 300px;
-    text-align: center;
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #006666;
+}
+
+header {
+    margin: 1vmax 8vmax 0;
+    height: 2vmax;
+}
+
+header div#title {
+    float: left;
+    margin-top: 2vmax;
+    color: white;
+    font-size: 3em;
+}
+
+header div#twitter {
+    float: right;
+    margin-right: 10px;
+}
+
+header div#github {
+    float: right;
+    margin: 8px 15px 0 0;
 }

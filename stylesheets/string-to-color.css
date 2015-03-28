@@ -1,0 +1,26 @@
+.input-fields {
+    margin-top: 75px;
+    text-align: center;
+}
+
+.output {
+    color: #ffffff;
+    width: 300px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+input[type=text] {
+    color: black;
+    font-size: 120%;
+    border-radius: 4px;
+    padding: 20px 32px;
+    border: solid 1px #EEE;
+    width: 300px;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 1.2em;
+}

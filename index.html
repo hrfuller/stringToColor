@@ -1,78 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+<head>
+    <title>StringToColor</title>
+    <meta charset="UTF-8">
+    <meta name="copyright" content="Tobias Schneider"/>
+    <meta name="publisher" content="Tobias Schneider"/>
+    <meta name="author" content="Tobias Schneider"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta http-equiv="content-language" content="de"/>
+    <meta name="language" content="de"/>
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content="css, animation, css animations"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="revisit-after" content="1 week"/>
+
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/string-to-color.css" media="screen">
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
     <script type="text/JavaScript" src="javascripts/string-to-color.js"></script>
-
-    <title>StringToColor by derTobsch</title>
 </head>
-
 <body>
-
 <header>
-    <div class="container">
-        <h1>StringToColor</h1>
-
-        <h2>Generate a consistent (and good looking) color for any string</h2>
-        <section id="downloads">
-            <a href="https://github.com/derTobsch/stringToColor/zipball/master" class="btn">Download as .zip</a>
-            <a href="https://github.com/derTobsch/stringToColor/tarball/master" class="btn">Download as .tar.gz</a>
-            <a href="https://github.com/derTobsch/stringToColor" class="btn btn-github">
-                <span class="icon"></span>
-                View on GitHub
-            </a>
-        </section>
+    <div id="title">
+        StringToColor
+    </div>
+    <div id="twitter">
+        <a href="https://twitter.com/derTobsch" target="_blank">
+            <img src="images/twitter.png" alt="Twitter" title="Twitter" border="0"/>
+        </a>
+    </div>
+    <div id="github">
+        <a href="https://github.com/derTobsch" target="_blank">
+            <img src="images/github.png" alt="GitHub" title="GitHub" border="0"/>
+        </a>
     </div>
 </header>
 
-<div class="container">
-    <section id="main_content">
-        <h3>
-            <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
-                <span class="octicon octicon-link"></span>
-            </a>
-        </h3>
 
-        <p>
-            Type something into the input to see the fancy color which is connected to your input.
-        </p>
-
-        <div class="input-fields">
-            <input id="input" type="text" placeholder="Type anything here"/>
-        </div>
-        <div class="output"></div>
-
-        <script type="text/javascript">
-            $(function () {
-                var $output = $('.output');
-                $('input[type=text]').keyup(function () {
-                    var value = $(this).val();
-                    if (value.length > 0) {
-                        var color = '#' + getColor(value);
-                        setColor($(this), color, '#ffffff');
-                        $output.html(color);
-                    } else {
-                        setColor($(this), '', 'black');
-                        $output.html('');
-                    }
-                }).focus();
-                function setColor($input, generatedColor, fontColor) {
-                    $input.css({
-                        'color' : fontColor,
-                        'background-color': generatedColor,
-                        'border-color': generatedColor
-                    });
-                }
-            });
-        </script>
-    </section>
+<div class="input-fields">
+    <p>
+        Type something into the input to see the fancy color which is connected to your input.
+    </p>
+    <input id="input" type="text" placeholder="Type anything here"/>
 </div>
+<div class="output"></div>
+
+<script type="text/javascript">
+    $(function () {
+        var $output = $('.output');
+        $('input[type=text]').keyup(function () {
+            var value = $(this).val();
+            if (value.length > 0) {
+                var color = '#' + getColor(value);
+                setColor($(this), color, '#ffffff');
+                $output.html(color);
+            } else {
+                setColor($(this), '', 'black');
+                $output.html('');
+            }
+        }).focus();
+        function setColor($input, generatedColor, fontColor) {
+            $input.css({
+                'color' : fontColor,
+                'background-color': generatedColor,
+                'border-color': generatedColor
+            });
+        }
+    });
+</script>
 </body>
 </html>
