@@ -21,9 +21,9 @@ export function getColor(str) {
  * @private
  */
 function hash(string) {
-    var h = 0;
-    for (var i = 0; i < string.length; i++) {
-        h = string.charCodeAt(i) + ((h << 5) - h);
+    let h = 0;
+    for (let char of string) {
+        h = char.codePointAt(0) + ((h << 5) - h);
     }
     return h;
 }
@@ -51,7 +51,7 @@ function intToRgb(int) {
  * @private
  */
 function doShading(color, prc) {
-    var num = parseInt(color, 16),
+    let num = parseInt(color, 16),
         amt = Math.round(2.55 * prc),
         R = (num >> 16) + amt,
         G = (num >> 8 & 255) + amt,
