@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/derTobsch/stringToColor.svg?branch=master)](https://travis-ci.org/derTobsch/stringToColor) [![devDependency Status](https://david-dm.org/dertobsch/stringToColor/dev-status.svg)](https://david-dm.org/dertobsch/stringToColor#info=devDependencies)
+[![Build Status](https://travis-ci.org/derTobsch/stringToColor.svg?branch=master)](https://travis-ci.org/derTobsch/stringToColor) [![devDependency Status](https://david-dm.org/dertobsch/stringToColor/dev-status.svg)](https://david-dm.org/dertobsch/stringToColor#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/derTobsch/stringToColor/badge.svg)](https://coveralls.io/r/derTobsch/stringToColor)
 String to Color
 ===============
 
