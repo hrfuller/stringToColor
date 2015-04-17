@@ -44,12 +44,6 @@ module.exports = function (grunt) {
                 },
                 src: ['test/**/*.js']
             }
-        },
-        coveralls: {
-            options: {
-                src: 'coverage-results/lcov.info',
-                force: false
-            }
         }
     });
 
@@ -57,7 +51,6 @@ module.exports = function (grunt) {
         'eslint:target',
         'mochaTest:test',
         'babel:dist',
-        'copy:main',
-        'coveralls'
+        'copy:main'
     ]);
 };
