@@ -45,9 +45,9 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', [
-        'eslint',
+        'eslint:target',
         'shell:mochaTest',
-        'babel',
-        'copy'
+        'babel:dist',
+        'copy:main'
     ]);
 };
