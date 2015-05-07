@@ -7,7 +7,8 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         babel: {
             options: {
-                modules: 'umd'
+                modules: 'umd',
+                loose: 'all'
             },
             dist: {
                 files: {
