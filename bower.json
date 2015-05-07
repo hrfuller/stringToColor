@@ -1,6 +1,6 @@
 {
     "name": "string-to-color",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "Tiny library to generate the same nice hex color for a string in Javascript.",
     "authors": [
         "Tobias Schneider <Tobias.Schneider@Tobsch.org>"
