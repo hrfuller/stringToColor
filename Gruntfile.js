@@ -5,30 +5,6 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        babel: {
-            options: {
-                modules: 'umd',
-                loose: 'all'
-            },
-            dist: {
-                files: {
-                    'dist/string-to-color.umd.js': 'src/string-to-color.js'
-                }
-            }
-        },
-        copy: {
-            main: {
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ['src/*'],
-                        dest: 'dist/',
-                        filter: 'isFile'
-                    }
-                ]
-            }
-        },
         eslint: {
             options: {
                 configFile: 'eslint.json'
@@ -45,13 +21,64 @@ module.exports = function (grunt) {
                 },
                 src: ['test/**/*.js']
             }
+        },
+        babel: {
+            options: {
+                modules: 'umd',
+                optional: 'runtime'
+            },
+            dist: {
+                files: {
+                    'dist/string-to-color.umd.runtime.js': 'src/string-to-color.js'
+                }
+            }
+        },
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['src/*'],
+                        dest: 'dist/',
+                        filter: 'isFile'
+                    }
+                ]
+            },
+            babel: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['node_modules/babel-runtime/*'],
+                        dest: 'dist/'
+                    }
+                ]
+            }
+        },
+        browserify: {
+            dist: {
+                files: {
+                    'dist/string-to-color.es5.umd.js': ['dist/string-to-color.umd.runtime.js']
+                },
+                options: {
+                    transform: ['babelify']
+                }
+            }
+        },
+        clean: {
+            build: {
+                src: ['dist/node_modules/', 'dist/string-to-color.umd.runtime.js']
+            }
         }
     });
 
     grunt.registerTask('default', [
-        'eslint:target',
-        'mochaTest:test',
-        'babel:dist',
-        'copy:main'
+        'eslint',
+        'mochaTest',
+        'babel',
+        'copy:babel',
+        'browserify',
+        'copy:main',
+        'clean'
     ]);
 };
