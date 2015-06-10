@@ -4,8 +4,6 @@
  Author: Tobias Schneider [code@Tobsch.org - http://www.tobsch.org]
  ********************************************************/
 
-export { getColor };
-
 /**
  * Converts a string into a unique color
  * @param str
